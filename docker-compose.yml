@@ -1,0 +1,18 @@
+version: '3'
+services:
+
+  java-note-md:
+    image: nginx:stable
+    container_name: java-note-vuepress-516
+    environment:
+      - TZ=Asia/Shanghai
+    ports:
+      - 3000:80
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ~/docker/nginx/logs:/var/log/nginx
+      - .:/usr/share/nginx/html
+      # - ./docs/.vuepress/dist:/usr/share/nginx/html
+
+
+
